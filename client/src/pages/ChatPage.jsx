@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, HStack, Input } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, HStack, Input, useSteps } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { socketService } from "../services/socketService";
 import { useParams } from "react-router-dom";

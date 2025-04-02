@@ -5,7 +5,9 @@ function ChatSection({ messages, currentUser }) {
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    setTimeout(() => {
+      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
   };
 
   useEffect(() => {
@@ -22,9 +24,11 @@ function ChatSection({ messages, currentUser }) {
       <VStack
         spacing={4}
         p={4}
+        pb={10}
         overflowY="auto"
         flex={1}
         alignItems="stretch"
+        justify="flex-end"
       >
         {messages.map((msg, index) => (
           <Box
@@ -54,7 +58,7 @@ function ChatSection({ messages, currentUser }) {
             </Text>
           </Box>
         ))}
-        <div ref={messagesEndRef} style={{ paddingBottom: "20px" }} />
+        <div ref={messagesEndRef} /> 
       </VStack>
     </Box>
   );
